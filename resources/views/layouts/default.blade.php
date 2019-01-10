@@ -1,19 +1,22 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
 <head>
-    <title>MusicShop</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" >
+    @include('includes.head')
 </head>
 <body>
-@section('sidebar')
-    This is the master sidebar.
-@show
-
+@include('includes.header')
 <div class="container">
-    @yield('content')
+
+    <div id="main" class="row">
+
+        @yield('content')
+
+    </div>
+
+    <footer class="row">
+        @include('includes.footer')
+    </footer>
+
 </div>
-<link rel="stylesheet" type="text/css" href="{{ asset('js/app.js') }}" >
 </body>
 </html>

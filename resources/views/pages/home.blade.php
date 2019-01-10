@@ -1,7 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Bence
- * Date: 2019.01.09.
- * Time: 19:27
- */
+@extends('layouts.default')
+@section('content')
+    i am the home page
+@stop
