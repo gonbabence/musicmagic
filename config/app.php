@@ -163,6 +163,11 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Jenssegers Mongodb Service provider
+         */
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
+
+        /*
          * Package Service Providers...
          */
 

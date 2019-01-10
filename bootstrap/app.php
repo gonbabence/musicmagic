@@ -42,6 +42,12 @@ $app->singleton(
 );
 
 /*
+ * Registering Jenseggers/Mongodb
+*/
+$app->register(Jenssegers\Mongodb\MongodbServiceProvider::class);
+$app->withEloquent();
+
+/*
 |--------------------------------------------------------------------------
 | Return The Application
 |--------------------------------------------------------------------------
