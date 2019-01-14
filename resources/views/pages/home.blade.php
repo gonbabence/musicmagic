@@ -3,4 +3,4 @@
     <div class="row">
         Home page
     </div>
-@stop
+@endsection

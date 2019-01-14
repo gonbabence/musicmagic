@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function() {
-    return View::make('pages.home');
-});
+Route::get('/', 'Home@index');
 
-Route::get('/home', function() {
-    return View::make('pages.home');
-});
+Route::get('/home', 'Home@index');
+
+Route::view('/create', 'ads.create');
