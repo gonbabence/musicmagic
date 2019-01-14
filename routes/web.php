@@ -11,8 +11,10 @@
 |
 */
 
+//Home routes
 Route::get('/', 'Home@index');
-
 Route::get('/home', 'Home@index');
 
-Route::view('/create', 'ads.create');
+//Ads routes
+Route::get('/ads/create', 'Ads@create');
+Route::post('/ads/create', 'Ads@create');
