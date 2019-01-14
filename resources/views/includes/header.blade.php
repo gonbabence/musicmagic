@@ -11,6 +11,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/ads/create">Post your ad</a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/ads/list">Ads</a>
+            </li>
         </ul>
     </div>
 </nav>

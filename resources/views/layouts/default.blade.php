@@ -8,15 +8,13 @@
 <div class="container">
 
     <div id="main" class="row">
-<div class="container">
         @yield('content')
-
     </div>
 
     <footer class="row">
         @include('includes.footer')
     </footer>
-
+</div>
 </div>
 </body>
 </html>

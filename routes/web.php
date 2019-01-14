@@ -16,5 +16,6 @@ Route::get('/', 'Home@index');
 Route::get('/home', 'Home@index');
 
 //Ads routes
+Route::get('/ads/list', 'Ads@index');
 Route::get('/ads/create', 'Ads@create');
 Route::post('/ads/create', 'Ads@create');

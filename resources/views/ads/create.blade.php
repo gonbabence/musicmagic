@@ -8,8 +8,8 @@
             @csrf
 
             <div class="form-group">
-                <label for="condition">Category</label>
-                <select id="condition" name="condition" class="form-control" required>
+                <label for="category">Category</label>
+                <select id="category" name="category" class="form-control" required>
                     <option value="guitars">Guitars</option>
                     <option value="keyboards">Keyboards</option>
                     <option value="drums">Drums/Percussion</option>

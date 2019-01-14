@@ -6,8 +6,6 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class Ads extends Eloquent {
 
     /**
-     * The attributes that are mass assignable.
-     *
      * @var array
      */
     protected $fillable = [
@@ -17,5 +15,13 @@ class Ads extends Eloquent {
         'price',
         'description'
     ];
+
+    public function assign($values) {
+        foreach ($values as $key => $value) {
+            if (isset($this->fillable[$key])) {
+                $this->{$key} = $value;
+            }
+        }
+    }
 
 }
