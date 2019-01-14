@@ -1,4 +1,6 @@
 @extends('layouts.default')
 @section('content')
-    i am the home page
+    <div class="row">
+        Home page
+    </div>
 @stop

@@ -8,7 +8,7 @@
 <div class="container">
 
     <div id="main" class="row">
-
+<div class="container">
         @yield('content')
 
     </div>
