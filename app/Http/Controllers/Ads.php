@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class Ads extends Controller {
 
@@ -20,24 +21,16 @@ class Ads extends Controller {
         }
 
         $ad = new \App\Models\Ads;
-
         $post = $request->post();
-
-        //assign data
-        $ad->{'category'} = $post['category'];
-        $ad->mfr = $post['mfr'];
-        $ad->model = $post['model'];
-        $ad->condition = $post['condition'];
-        $ad->price = (int) $post['condition'];
-        $ad->description = $post['description'];
-
+        $ad->fill($post);
 
         if (!$ad->save()) {
-            //fall silently
+            $request->session()->flash('error', 'Save failed');
+        } else {
+            $request->session()->flash('success', 'Saved successfully');
         }
 
         return view('pages.home');
-
     }
 
 }

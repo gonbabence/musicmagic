@@ -6,7 +6,7 @@
 <body>
 @include('includes.header')
 <div class="container">
-
+    @include('includes.flash_message')
     <div id="main" class="row">
         @yield('content')
     </div>
