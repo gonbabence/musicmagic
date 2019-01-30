@@ -4,7 +4,7 @@
         <h3>Create</h3>
     </div>
     <div class="container">
-        <form method="POST" action="/ads/create">
+        <form method="POST" action="/ads/save">
             @csrf
 
             <div class="form-group">
