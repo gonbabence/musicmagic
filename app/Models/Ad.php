@@ -3,7 +3,8 @@ namespace App\Models;
 
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class Ad extends Eloquent {
+class Ad extends Eloquent
+{
 
     /**
      * @var array
@@ -15,5 +16,4 @@ class Ad extends Eloquent {
         'price',
         'description'
     ];
-
 }

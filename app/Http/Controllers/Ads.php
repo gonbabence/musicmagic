@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Ad as AdModel;
 
-class Ads extends Controller {
+class Ads extends Controller
+{
 
-    public function index() {
+    public function index()
+    {
         return view(
             'ads.list',
             [
@@ -17,7 +19,8 @@ class Ads extends Controller {
         );
     }
 
-    public function details($id) {
+    public function details($id)
+    {
         return view(
             'ads.details',
             [
@@ -29,11 +32,13 @@ class Ads extends Controller {
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create() {
+    public function create()
+    {
         return view('ads.create');
     }
 
-    public function save(Request $request) {
+    public function save(Request $request)
+    {
         $ad = new AdModel;
         $ad->fill($request->post());
 
@@ -46,7 +51,8 @@ class Ads extends Controller {
         return view('pages.home');
     }
 
-    public function getAds($limit = null, $offset = null) {
+    public function getAds($limit = null, $offset = null)
+    {
         $result = [];
 
         foreach (AdModel::all() as $ad) {
@@ -55,5 +61,4 @@ class Ads extends Controller {
 
         return $result;
     }
-
 }
