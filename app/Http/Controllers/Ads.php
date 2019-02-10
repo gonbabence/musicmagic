@@ -11,10 +11,16 @@ class Ads extends Controller
 
     public function index()
     {
+        $ads = [];
+
+        foreach (AdModel::all() as $ad) {
+            array_push($ads, $ad->getAttributes());
+        }
+
         return view(
             'ads.list',
             [
-                'ads' => $this->getAds()
+                'ads' => $ads
             ]
         );
     }
@@ -49,16 +55,5 @@ class Ads extends Controller
         $request->session()->flash('success', 'Saved successfully');
 
         return view('pages.home');
-    }
-
-    public function getAds($limit = null, $offset = null)
-    {
-        $result = [];
-
-        foreach (AdModel::all() as $ad) {
-            array_push($result, $ad->getAttributes());
-        }
-
-        return $result;
     }
 }
