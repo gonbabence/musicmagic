@@ -9,6 +9,9 @@ use App\Models\Ad as AdModel;
 class Ads extends Controller
 {
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $ads = [];
@@ -25,8 +28,16 @@ class Ads extends Controller
         );
     }
 
+    /**
+     * @param String $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function details($id)
     {
+        if (!preg_match('/^[a-f\d]{24}$/i', $id)) {
+            abort(404);
+        }
+
         return view(
             'ads.details',
             [
@@ -43,6 +54,10 @@ class Ads extends Controller
         return view('ads.create');
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function save(Request $request)
     {
         $ad = new AdModel;
