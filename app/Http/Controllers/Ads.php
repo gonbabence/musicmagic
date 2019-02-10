@@ -21,7 +21,7 @@ class Ads extends Controller {
         return view(
             'ads.details',
             [
-                'ad' => AdModel::find($id)->getAttributes();
+                'ad' => AdModel::find($id)->getAttributes()
             ]
         );
     }
