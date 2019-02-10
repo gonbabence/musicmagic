@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use App\Models\Ads as AdsModel;
+use App\Models\Ad as AdModel;
 
 class Ads extends Controller {
 
@@ -18,7 +18,7 @@ class Ads extends Controller {
     }
 
     public function details($id) {
-        $ad = AdsModel::find($id)->getAttributes();
+        $ad = AdModel::find($id)->getAttributes();
         return view(
             'ads.details',
             [
@@ -35,7 +35,7 @@ class Ads extends Controller {
     }
 
     public function save(Request $request) {
-        $ad = new AdsModel;
+        $ad = new AdModel;
         $post = $request->post();
         $ad->fill($post);
 
@@ -51,7 +51,7 @@ class Ads extends Controller {
     public function getAds($limit = null, $offset = null) {
         $result = [];
 
-        foreach (AdsModel::all() as $ad) {
+        foreach (AdModel::all() as $ad) {
             array_push($result, $ad->getAttributes());
         }
 
