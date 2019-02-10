@@ -18,5 +18,5 @@ Route::get('/home', 'Home@index');
 //Ads routes
 Route::get('/ads/list', 'Ads@index');
 Route::get('/ads/create', 'Ads@create');
-Route::get('/ads/{adid}', 'Ads@details');//->where('adid', '/^[a-f\d]{24}$/i');
+Route::get('/ads/{adid}', 'Ads@details');
 Route::post('/ads/save', 'Ads@save');
