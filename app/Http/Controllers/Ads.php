@@ -18,11 +18,10 @@ class Ads extends Controller {
     }
 
     public function details($id) {
-        $ad = AdModel::find($id)->getAttributes();
         return view(
             'ads.details',
             [
-                'ad' => $ad
+                'ad' => AdModel::find($id)->getAttributes();
             ]
         );
     }
@@ -36,8 +35,7 @@ class Ads extends Controller {
 
     public function save(Request $request) {
         $ad = new AdModel;
-        $post = $request->post();
-        $ad->fill($post);
+        $ad->fill($request->post());
 
         if (!$ad->save()) {
             $request->session()->flash('error', 'Save failed');
