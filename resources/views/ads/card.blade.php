@@ -2,10 +2,10 @@
     <img class="card-img-top" src="https://via.placeholder.com/200x100" alt="Card image cap">
     <div class="card-body text-center">
         <p class="card-text">
-            <?=sprintf('%s - %s', $ad['mfr'], $ad['model'])?>
+            {{ $ad['mfr'] }} - {{ $ad['model'] }}
         </p>
         <p class="card-text">
-            <?=sprintf('%s Ft', $ad['price'])?>
+            {{ $ad['price'] }} Ft
         </p>
     </div>
 </a>

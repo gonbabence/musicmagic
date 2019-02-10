@@ -6,11 +6,11 @@
     {{--{{ $ad['condition'] }}--}}
 
     <div class="col-md-12">
-        <p><?=sprintf('%s - %s', $ad['mfr'], $ad['model'])?></p>
+        <p>{{ $ad['mfr'] }} - {{ $ad['model'] }}</p>
         <hr>
         <p><!-- image --></p>
         <hr>
-        <p>Price: <?=sprintf('%s Ft', $ad['price'])?></p>
+        <p>Price: {{ $ad['price'] }} Ft</p>
         <p class="active">Description:</p>
         <div class="col-md-12">
             <div class="tab-content">
