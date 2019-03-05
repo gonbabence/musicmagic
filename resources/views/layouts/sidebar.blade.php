@@ -1,21 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     @include('includes.head')
 </head>
 <body>
+
 @include('includes.header')
 
-@include('includes.sidebar')
+<div class="container-fluid text-center">
+    <div class="row content">
 
-<div id="main" class="row">
-    @yield('content')
+        @include('includes.sidebar')
+
+        <div class="col-sm-8 text-left">
+
+            @include('includes.flash_message')
+
+            @yield('content')
+
+        </div>
+
+    </div>
 </div>
 
-<footer class="col-md-7">
-    @include('includes.footer')
-</footer>
+@include('includes.footer')
 
-</div>
 </body>
 </html>
